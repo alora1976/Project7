@@ -69,7 +69,7 @@ class Reel(pygame.sprite.Sprite):
         
     def outcome(self):
         
-        icon=random.choice(["book.png","carriage.png","frog.png","lamp.png","pegasus.png","wolf.jpg"])
+        icon=random.choice(["castle.png","book.png","carriage.png","frog.png","lamp.png","pegasus.png","wolf.jpg"])
         self.image = pygame.image.load(os.path.join(img_folder,icon)).convert()
         self.display=icon
         
