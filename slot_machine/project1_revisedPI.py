@@ -11,6 +11,10 @@ import os
 
 import random
 from pygame import mixer
+import RPi.GPIO as GPIO
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(18, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+GPIO.add_event_detect(18, GPIO.RISING)
 #PI settings
 
 #set up assests
@@ -140,7 +144,7 @@ while running:
         if event.type==pygame.QUIT:
             running=False
         #if GPIO.event_detected(18):
-        if event.type == pygame.KEYUP:
+        if event.type == pygame.KEYUP or GPIO.event_detected(18):
             
             if game_state == 0:
                 pygame.mixer.stop()
